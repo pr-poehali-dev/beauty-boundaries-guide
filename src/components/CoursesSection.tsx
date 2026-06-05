@@ -47,12 +47,15 @@ const COURSES = [
   },
 ];
 
+const NASTASIA_PHOTO = "https://cdn.poehali.dev/projects/75a07d50-1829-4ba4-acc6-b89b0e38e295/bucket/77e12cbe-c76f-43ee-b6ec-eaf1654e2da8.jpeg";
+
 const TEACHERS = [
   {
     name: "Настасья Приступа",
     role: "Онлайн-наставник по маникюру",
     bio: "10 лет в профессии, более 2000 учеников по всей России. Автор методики «Мастер с характером».",
     emoji: "💅",
+    photo: NASTASIA_PHOTO,
     courses: 4,
   },
   {
@@ -60,6 +63,7 @@ const TEACHERS = [
     role: "Бизнес-коуч для beauty-мастеров",
     bio: "Владелец 3 студий, консультант по развитию beauty-бизнеса. MBA, 7 лет в coaching.",
     emoji: "🚀",
+    photo: null,
     courses: 2,
   },
   {
@@ -67,6 +71,7 @@ const TEACHERS = [
     role: "SMM-специалист и маркетолог",
     bio: "Помогла 150+ мастерам выстроить очередь клиентов через Instagram и TikTok.",
     emoji: "✨",
+    photo: null,
     courses: 3,
   },
 ];
@@ -229,8 +234,12 @@ export default function CoursesSection() {
             style={{ background: "linear-gradient(135deg, hsl(175 70% 45% / 0.06), hsl(28 95% 58% / 0.06))" }}
           >
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-24 h-24 rounded-2xl bg-secondary flex items-center justify-center text-5xl shrink-0 mx-auto md:mx-0">
-                💅
+              <div className="w-28 h-28 rounded-2xl overflow-hidden shrink-0 mx-auto md:mx-0 border-2 border-teal/30">
+                <img
+                  src="https://cdn.poehali.dev/projects/75a07d50-1829-4ba4-acc6-b89b0e38e295/bucket/77e12cbe-c76f-43ee-b6ec-eaf1654e2da8.jpeg"
+                  alt="Настасья Приступа"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-3">
@@ -265,8 +274,14 @@ export default function CoursesSection() {
                 className="bg-card border border-border rounded-2xl p-8 card-hover text-center"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="w-20 h-20 rounded-2xl bg-secondary flex items-center justify-center text-4xl mx-auto mb-6">
-                  {teacher.emoji}
+                <div className="w-20 h-20 rounded-2xl overflow-hidden mx-auto mb-6">
+                  {teacher.photo ? (
+                    <img src={teacher.photo} alt={teacher.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full bg-secondary flex items-center justify-center text-4xl">
+                      {teacher.emoji}
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-display text-2xl font-semibold mb-1">{teacher.name}</h3>
                 <p className="text-teal text-sm font-medium mb-4">{teacher.role}</p>
