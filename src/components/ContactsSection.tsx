@@ -23,21 +23,20 @@ export default function ContactsSection() {
               </p>
 
               <div className="flex flex-col gap-4">
-                {[
-                  { icon: "Mail", label: "Email", value: "hello@artmaster.ru" },
-                  { icon: "MessageCircle", label: "Telegram", value: "@nastasia_pristupa", href: "https://t.me/nastasia_pristupa" },
-                  { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
-                ].map((contact) => (
-                  <div key={contact.label} className="flex items-center gap-4 group cursor-pointer">
-                    <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-coral/10 transition-colors">
-                      <Icon name={contact.icon as "Mail" | "MessageCircle" | "Phone"} size={18} className="text-muted-foreground group-hover:text-coral transition-colors" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-muted-foreground">{contact.label}</div>
-                      <div className="text-sm font-medium group-hover:text-coral transition-colors">{contact.value}</div>
-                    </div>
+                <a
+                  href="https://t.me/nastasia_pristupa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-coral/10 transition-colors">
+                    <Icon name="Send" size={18} className="text-muted-foreground group-hover:text-coral transition-colors" />
                   </div>
-                ))}
+                  <div>
+                    <div className="text-xs text-muted-foreground">Telegram</div>
+                    <div className="text-sm font-medium group-hover:text-coral transition-colors">@nastasia_pristupa</div>
+                  </div>
+                </a>
               </div>
             </div>
 
