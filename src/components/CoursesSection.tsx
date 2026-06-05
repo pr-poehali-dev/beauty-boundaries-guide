@@ -253,32 +253,7 @@ export default function CoursesSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TEACHERS.map((teacher, i) => (
-              <div
-                key={teacher.name}
-                className="bg-card border border-border rounded-2xl p-8 card-hover text-center"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <div className="w-20 h-20 rounded-2xl overflow-hidden mx-auto mb-6">
-                  {teacher.photo ? (
-                    <img src={teacher.photo} alt={teacher.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-full h-full bg-secondary flex items-center justify-center text-4xl">
-                      {teacher.emoji}
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-display text-2xl font-semibold mb-1">{teacher.name}</h3>
-                <p className="text-teal text-sm font-medium mb-4">{teacher.role}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{teacher.bio}</p>
-                <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
-                  <Icon name="BookOpen" size={13} />
-                  <span>{teacher.courses} курса</span>
-                </div>
-              </div>
-            ))}
-          </div>
+
         </div>
       </section>
 

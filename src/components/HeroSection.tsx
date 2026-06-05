@@ -40,7 +40,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Онлайн-курсы и вебинары для мастеров бьюти-сферы. От техник до бизнеса — всё, чтобы выйти на новый уровень.
+            Авторские курсы и бесплатные вебинары Настасьи Приступы. Для мастеров, которые хотят перейти в онлайн и зарабатывать больше.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
