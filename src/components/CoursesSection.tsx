@@ -3,47 +3,31 @@ import Icon from "@/components/ui/icon";
 const COURSES = [
   {
     id: 1,
-    tag: "Маникюр",
-    title: "Профессиональный маникюр с нуля",
-    desc: "От базовых техник до сложных дизайнов. Практика на каждом модуле.",
-    price: "12 900 ₽",
-    duration: "6 недель",
-    students: "340",
-    color: "coral",
-    icon: "Sparkles",
+    tag: "Бесплатно",
+    title: "Как найти первых учениц без блогерства",
+    desc: "15 минут. Никакой воды. Схема, по которой вы начнёте набирать учениц уже через неделю.",
+    price: "Бесплатно",
+    duration: "15 минут",
+    badge: "Урок на YouTube",
+    color: "teal",
+    icon: "Play",
+    href: "#",
+    cta: "Смотреть бесплатный урок",
   },
   {
     id: 2,
-    tag: "Бизнес",
-    title: "Открой свою студию красоты",
-    desc: "Юридические вопросы, маркетинг, найм персонала и финансовое планирование.",
-    price: "19 900 ₽",
-    duration: "8 недель",
-    students: "182",
-    color: "teal",
-    icon: "TrendingUp",
-  },
-  {
-    id: 3,
-    tag: "Психология",
-    title: "Работа с трудными клиентами",
-    desc: "Как ставить границы, управлять конфликтами и сохранять нервы в любой ситуации.",
-    price: "7 900 ₽",
-    duration: "3 недели",
-    students: "520",
+    tag: "Курс",
+    title: "Первые клиенты за 7 дней",
+    desc: "Для мастеров, которые хотят перестать зависеть от салона, найти учениц без рекламы и зарабатывать больше, работая меньше.",
+    price: "1 490 ₽",
+    oldPrice: "2 990 ₽",
+    duration: "до 10 июня",
+    badge: "Горячая цена",
     color: "coral",
-    icon: "Heart",
-  },
-  {
-    id: 4,
-    tag: "SMM",
-    title: "Продвижение в соцсетях для мастеров",
-    desc: "Контент-план, Reels, Stories, таргет. Привлечение клиентов без бюджета.",
-    price: "9 900 ₽",
-    duration: "4 недели",
-    students: "417",
-    color: "teal",
-    icon: "Megaphone",
+    icon: "Sparkles",
+    href: "https://t.me/nastasia_pristupa",
+    cta: "Записаться на курс",
+    features: ["Схема поиска учениц", "Шаблоны сообщений", "Разборы ошибок", "Закрытый Telegram-чат"],
   },
 ];
 
@@ -90,64 +74,82 @@ export default function CoursesSection() {
       {/* COURSES */}
       <section className="py-24 px-6 bg-secondary/20">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-px w-12 bg-coral" />
-                <span className="section-label">Наши курсы</span>
-              </div>
-              <h2 className="font-display text-5xl md:text-6xl font-bold leading-tight">
-                Популярные<br /><em className="text-teal not-italic">программы</em>
-              </h2>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-coral" />
+              <span className="section-label">Обучение, которое работает</span>
             </div>
-            <button className="self-start md:self-auto flex items-center gap-2 text-muted-foreground hover:text-teal transition-colors text-sm font-medium">
-              Все курсы <Icon name="ArrowRight" size={16} />
-            </button>
+            <h2 className="font-display text-5xl md:text-6xl font-bold leading-tight">
+              Выбери свой<br /><em className="text-teal not-italic">формат</em>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {COURSES.map((course, i) => (
               <div
                 key={course.id}
-                className="group relative bg-card border border-border rounded-2xl p-6 card-hover cursor-pointer overflow-hidden"
+                className="group relative bg-card border border-border rounded-2xl p-6 card-hover overflow-hidden flex flex-col"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className={`absolute top-0 left-0 w-1 h-full ${course.color === "coral" ? "bg-coral" : "bg-teal"}`} />
 
                 <div className="flex items-start justify-between mb-4">
-                  <span className={`tag-pill ${course.color === "coral" ? "bg-coral/10 text-coral" : "bg-teal/10 text-teal"}`}>
-                    {course.tag}
-                  </span>
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${course.color === "coral" ? "bg-coral/10" : "bg-teal/10"}`}>
-                    <Icon name={course.icon as "Sparkles" | "TrendingUp" | "Heart" | "Megaphone"} size={20} className={course.color === "coral" ? "text-coral" : "text-teal"} />
+                  <div className="flex items-center gap-2">
+                    <span className={`tag-pill ${course.color === "coral" ? "bg-coral/10 text-coral" : "bg-teal/10 text-teal"}`}>
+                      {course.tag}
+                    </span>
+                    {course.badge && (
+                      <span className="tag-pill bg-secondary text-muted-foreground">{course.badge}</span>
+                    )}
+                  </div>
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${course.color === "coral" ? "bg-coral/10" : "bg-teal/10"}`}>
+                    <Icon name={course.icon as "Play" | "Sparkles"} size={20} className={course.color === "coral" ? "text-coral" : "text-teal"} />
                   </div>
                 </div>
 
                 <h3 className="font-display text-2xl font-semibold mb-2 leading-snug group-hover:text-coral transition-colors">
                   {course.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-2">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {course.desc}
                 </p>
 
-                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-6">
+                {course.features && (
+                  <ul className="flex flex-col gap-1.5 mb-6">
+                    {course.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Icon name="Check" size={14} className="text-teal shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-6">
                   <span className="flex items-center gap-1">
                     <Icon name="Clock" size={13} /> {course.duration}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Icon name="Users" size={13} /> {course.students} учеников
-                  </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-2xl font-bold">{course.price}</span>
-                  <button className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                    course.color === "coral"
-                      ? "bg-coral text-[hsl(220,20%,6%)] hover:opacity-90 hover-glow"
-                      : "bg-teal text-[hsl(220,20%,6%)] hover:opacity-90 hover-glow-teal"
-                  }`}>
-                    Записаться <Icon name="ArrowRight" size={14} />
-                  </button>
+                <div className="flex items-center justify-between mt-auto">
+                  <div>
+                    <span className="font-display text-2xl font-bold">{course.price}</span>
+                    {"oldPrice" in course && course.oldPrice && (
+                      <span className="ml-2 text-sm text-muted-foreground line-through">{course.oldPrice}</span>
+                    )}
+                  </div>
+                  <a
+                    href={course.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                      course.color === "coral"
+                        ? "bg-coral text-[hsl(220,20%,6%)] hover:opacity-90 hover-glow"
+                        : "bg-teal text-[hsl(220,20%,6%)] hover:opacity-90 hover-glow-teal"
+                    }`}
+                  >
+                    {course.cta} <Icon name="ArrowRight" size={14} />
+                  </a>
                 </div>
               </div>
             ))}
@@ -175,13 +177,13 @@ export default function CoursesSection() {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 bg-teal rounded-full animate-pulse" />
-                  <span className="section-label">Ближайший вебинар</span>
+                  <span className="section-label">Бесплатный вебинар · 15 июня</span>
                 </div>
                 <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 leading-tight">
                   Как стать <em className="text-coral not-italic">наставником</em><br />и зарабатывать на знаниях
                 </h2>
-                <p className="text-muted-foreground mb-2">📅 15 июня 2026 · 19:00 МСК · Бесплатно</p>
-                <p className="text-sm text-muted-foreground">Ведёт: Настасья Приступа</p>
+                <p className="text-muted-foreground mb-1">📅 15 июня · 19:00 МСК · Бесплатно</p>
+                <p className="text-sm text-muted-foreground">Ведёт: Настасья Приступа. Места ограничены.</p>
               </div>
               <div className="flex flex-col gap-3 shrink-0">
                 <a
@@ -192,7 +194,7 @@ export default function CoursesSection() {
                 >
                   Записаться бесплатно →
                 </a>
-                <p className="text-xs text-center text-muted-foreground">Осталось 47 мест</p>
+                <p className="text-xs text-center text-muted-foreground">Регистрация через Telegram</p>
               </div>
             </div>
           </div>
