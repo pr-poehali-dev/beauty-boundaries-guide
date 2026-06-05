@@ -11,7 +11,7 @@ const COURSES = [
     badge: "Урок на YouTube",
     color: "teal",
     icon: "Play",
-    href: "#",
+    href: "https://youtu.be/epXalXYoEKM?si=2SY07OO-Bo3gM8eh",
     cta: "Смотреть бесплатный урок",
   },
   {
