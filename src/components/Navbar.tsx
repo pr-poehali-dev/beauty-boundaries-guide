@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const NAV_ITEMS = ["Главная", "Курсы", "Преподаватели", "Блог", "Контакты"];
+const NAV_ITEMS = ["Главная", "Курсы", "Красные флаги", "Блог", "Контакты"];
+
+const NAV_ANCHORS: Record<string, string> = {
+  "Красные флаги": "#red-flags",
+};
 
 export default function Navbar() {
   const [activeNav, setActiveNav] = useState("Главная");
@@ -21,8 +25,9 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-1">
           {NAV_ITEMS.map((item) => (
-            <button
+            <a
               key={item}
+              href={NAV_ANCHORS[item] ?? "#"}
               onClick={() => setActiveNav(item)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 activeNav === item
@@ -31,7 +36,7 @@ export default function Navbar() {
               }`}
             >
               {item}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -60,15 +65,16 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-2">
           {NAV_ITEMS.map((item) => (
-            <button
+            <a
               key={item}
+              href={NAV_ANCHORS[item] ?? "#"}
               onClick={() => { setActiveNav(item); setMobileMenuOpen(false); }}
               className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                 activeNav === item ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item}
-            </button>
+            </a>
           ))}
         </div>
       )}
