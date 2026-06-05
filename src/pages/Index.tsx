@@ -522,7 +522,18 @@ export default function Index() {
             ))}
           </div>
 
-          <p className="text-xs text-muted-foreground">© 2026 АртМастер. Все права защищены.</p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://t.me/nastasia_pristupa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-teal transition-colors"
+            >
+              <Icon name="Send" size={13} />
+              t.me/nastasia_pristupa
+            </a>
+            <p className="text-xs text-muted-foreground">© 2026 АртМастер.</p>
+          </div>
         </div>
       </footer>
     </div>

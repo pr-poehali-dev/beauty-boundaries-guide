@@ -55,12 +55,25 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-wrap gap-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            {[["1 200+", "Учеников"], ["28", "Курсов"], ["12", "Экспертов"]].map(([num, label]) => (
+            {[["10 лет", "в профессии"], ["2 000+", "учеников по России"], ["авторские", "курсы и программы"]].map(([num, label]) => (
               <div key={label}>
-                <div className="font-display text-4xl font-bold text-coral">{num}</div>
+                <div className="font-display text-3xl md:text-4xl font-bold text-coral leading-tight">{num}</div>
                 <div className="text-sm text-muted-foreground mt-1">{label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Telegram CTA */}
+          <div className="mt-10 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <a
+              href="https://t.me/nastasia_pristupa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-teal/40 text-teal hover:bg-teal/10 transition-all duration-300 px-5 py-2.5 rounded-full text-sm font-medium"
+            >
+              <Icon name="Send" size={15} />
+              Бесплатный Telegram-канал для мастеров
+            </a>
           </div>
         </div>
       </div>

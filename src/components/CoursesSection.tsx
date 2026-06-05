@@ -195,9 +195,14 @@ export default function CoursesSection() {
                 <p className="text-sm text-muted-foreground">Ведёт: Настасья Приступа</p>
               </div>
               <div className="flex flex-col gap-3 shrink-0">
-                <button className="bg-coral text-[hsl(220,20%,6%)] font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-opacity hover-glow whitespace-nowrap">
-                  Зарегистрироваться →
-                </button>
+                <a
+                  href="https://t.me/nastasia_pristupa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-coral text-[hsl(220,20%,6%)] font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-opacity hover-glow whitespace-nowrap text-center"
+                >
+                  Записаться бесплатно →
+                </a>
                 <p className="text-xs text-center text-muted-foreground">Осталось 47 мест</p>
               </div>
             </div>
@@ -217,6 +222,40 @@ export default function CoursesSection() {
             <h2 className="font-display text-5xl md:text-6xl font-bold">
               Учись у <em className="text-coral not-italic">лучших</em>
             </h2>
+          </div>
+
+          {/* Личная история Настасьи */}
+          <div className="mb-10 rounded-2xl border border-teal/20 p-8 md:p-10"
+            style={{ background: "linear-gradient(135deg, hsl(175 70% 45% / 0.06), hsl(28 95% 58% / 0.06))" }}
+          >
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="w-24 h-24 rounded-2xl bg-secondary flex items-center justify-center text-5xl shrink-0 mx-auto md:mx-0">
+                💅
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-px w-8 bg-teal" />
+                  <span className="section-label">Основатель платформы</span>
+                </div>
+                <h3 className="font-display text-3xl font-bold mb-2">Настасья Приступа</h3>
+                <p className="text-teal text-sm font-medium mb-4">Онлайн-наставник по маникюру · @nastasia_pristupa</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  10 лет я делала маникюр, выгорала, боялась остаться без клиентов. А потом поняла:
+                  учить других — кайфовее, чем делать самой. Создала систему «Первые клиенты за 7 дней»
+                  и запустила эту платформу. Здесь я собираю авторские курсы и экспертов для мастеров бьюти-сферы.
+                  Добро пожаловать.
+                </p>
+                <a
+                  href="https://t.me/nastasia_pristupa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-teal text-[hsl(220,20%,6%)] font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity text-sm hover-glow-teal"
+                >
+                  <Icon name="Send" size={15} />
+                  Подписаться в Telegram
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

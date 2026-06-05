@@ -36,9 +36,15 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <button className="hidden md:block text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
-            Войти
-          </button>
+          <a
+            href="https://t.me/nastasia_pristupa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-teal transition-colors px-3 py-2"
+          >
+            <Icon name="Send" size={15} />
+            Telegram
+          </a>
           <button className="bg-coral text-[hsl(220,20%,6%)] text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity hover-glow">
             Начать обучение
           </button>
