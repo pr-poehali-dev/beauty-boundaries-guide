@@ -58,22 +58,6 @@ const TEACHERS = [
     photo: NASTASIA_PHOTO,
     courses: 4,
   },
-  {
-    name: "Ирина Волкова",
-    role: "Бизнес-коуч для beauty-мастеров",
-    bio: "Владелец 3 студий, консультант по развитию beauty-бизнеса. MBA, 7 лет в coaching.",
-    emoji: "🚀",
-    photo: null,
-    courses: 2,
-  },
-  {
-    name: "Мария Соколова",
-    role: "SMM-специалист и маркетолог",
-    bio: "Помогла 150+ мастерам выстроить очередь клиентов через Instagram и TikTok.",
-    emoji: "✨",
-    photo: null,
-    courses: 3,
-  },
 ];
 
 const BLOG_POSTS = [
